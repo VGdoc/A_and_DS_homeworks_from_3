@@ -7,14 +7,14 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public void insertFirst(E value) {
-        first = new Node<>(value,first);
+        first = new Node<>(value, first);
         size++;
     }
 
     @Override
     public E removeFirst() {
 
-        if (isEmpty()){
+        if (isEmpty()) {
             return null;
         }
 
@@ -31,17 +31,17 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
         Node<E> current = first;
         Node<E> prev = null;
 
-        while (current != null){
-            if(current.item.equals(value)){
+        while (current != null) {
+            if (current.item.equals(value)) {
                 break;
             }
             prev = current;
             current = current.next;
         }
-        if ((current == null)){
+        if ((current == null)) {
             return false;
         }
-        if (current == first){
+        if (current == first) {
             removeFirst();
             return true;
         }
@@ -58,9 +58,9 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
 
         Node<E> current = first;
 
-        while (current != null){
+        while (current != null) {
 
-            if(current.item.equals(value)){
+            if (current.item.equals(value)) {
                 return true;
             }
             current = current.next;
@@ -76,7 +76,7 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public boolean isEmpty() {
-        return size==0;
+        return size == 0;
     }
 
     @Override
@@ -89,9 +89,9 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
         StringBuilder sb = new StringBuilder("[");
         Node<E> current = first;
 
-        while (current != null){
+        while (current != null) {
             sb.append(current.item);
-            if (current.next != null){
+            if (current.next != null) {
                 sb.append(", ");
             }
             current = current.next;
