@@ -1,7 +1,9 @@
 package HW4;
 
 public interface MyDeQueue<E> {
-    boolean insert(E value);
+    boolean insertFront(E value);
+
+    boolean insertLast(E value);
 
     E removeFront();
 
