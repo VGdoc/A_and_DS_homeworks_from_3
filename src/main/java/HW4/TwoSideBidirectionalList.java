@@ -26,10 +26,6 @@ public interface TwoSideBidirectionalList<E> {
 
     E getLast();
 
-    E peekFirst();
-
-    E peekLast();
-
     class BiDirectionalNode<E> {
         E item;
         BiDirectionalNode<E> next;
