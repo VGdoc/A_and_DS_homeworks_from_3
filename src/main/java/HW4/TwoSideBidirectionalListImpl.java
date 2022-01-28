@@ -165,12 +165,12 @@ public class TwoSideBidirectionalListImpl<E> implements TwoSideBidirectionalList
 
     @Override
     public E getFirst() {
-        return removeFirst();
+        return first.item;
     }
 
     @Override
     public E getLast() {
-        return removeLast();
+        return last.item;
     }
 
 }
