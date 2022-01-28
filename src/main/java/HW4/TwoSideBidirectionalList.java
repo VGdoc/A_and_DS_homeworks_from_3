@@ -33,11 +33,12 @@ public interface TwoSideBidirectionalList<E> {
     class BiDirectionalNode<E> {
         E item;
         BiDirectionalNode<E> next;
-        BiDirectionalNode<E> last;
+        BiDirectionalNode<E> prev;
 
-        public BiDirectionalNode(E item, BiDirectionalNode<E> next) {
+        public BiDirectionalNode(E item, BiDirectionalNode<E> next, BiDirectionalNode<E> prev) {
             this.item = item;
             this.next = next;
+            this.prev = prev;
         }
     }
 }
