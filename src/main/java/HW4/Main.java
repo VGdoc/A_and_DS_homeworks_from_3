@@ -1,10 +1,15 @@
 package HW4;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
 public class Main {
 
 
     public static void main(String[] args) {
-        LinkedList<Integer> linkedList = new SimpleLinkedList<>();
+        SimpleLinkedList<Integer> linkedList = new SimpleLinkedList<>();
 
         linkedList.insertFirst(1);
         linkedList.insertFirst(2);
@@ -17,6 +22,32 @@ public class Main {
 
         linkedList.display();
 
+        testIterator(linkedList);
+
+    }
+
+    private static void testHomeWork() {
+        SimpleLinkedList<Integer> linkedList = new SimpleLinkedList<>();
+
+        for (Integer value : linkedList) {
+            System.out.println("value: " + value);
+        }
+    }
+
+    private static void testIterator(SimpleLinkedList<Integer> linkedList) {
+
+
+        for (Integer integer : linkedList){
+            System.out.println(integer);
+        }
+
+        System.out.println("*****");
+
+        Iterator<Integer> iterator = linkedList.iterator();
+        while (iterator.hasNext()){
+            Integer integer = iterator.next();
+            System.out.println(integer);
+        }
     }
 
 }

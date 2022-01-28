@@ -1,6 +1,8 @@
 package HW4;
 
-public class SimpleLinkedList<E> implements LinkedList<E> {
+import java.util.Iterator;
+
+public class SimpleLinkedList<E> implements LinkedList<E>, Iterable<E> {
 
     protected int size;
     protected Node<E> first;
@@ -103,4 +105,34 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
     public E getFirst() {
         return first.item;
     }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new ListIterator<>();
+    }
+
+    private class ListIterator<T> implements Iterator<E>{
+        Node<E> current = first;
+
+        @Override
+        public boolean hasNext() {
+            if (current != null){
+                return true;
+            }
+            reset();
+            return false;
+        }
+
+        @Override
+        public E next() {
+            Node<E> temp = current;
+            current = current.next;
+            return temp.item;
+        }
+
+        public void reset(){
+            current = first;
+        }
+    }
+
 }
